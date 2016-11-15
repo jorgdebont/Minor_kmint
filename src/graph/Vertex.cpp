@@ -9,3 +9,9 @@ Vertex::Vertex(int x, int y)
 {
 
 }
+
+Vertex::Vertex(CoordinateInt coordinates)
+: coordinates(coordinates)
+{
+
+}

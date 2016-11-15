@@ -12,6 +12,7 @@ class Vertex {
 public:
 
     Vertex(int x, int y);
+    Vertex(CoordinateInt coordinates);
     CoordinateInt coordinates;
 
 private:
