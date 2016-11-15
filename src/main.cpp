@@ -6,6 +6,7 @@
 #include <time.h>
 
 #include "ExampleGameObject.h"
+#include "graph/SummonersRift.hpp"
 
 
 int main()
@@ -43,7 +44,9 @@ int main()
                 }
             }
         }
-        
+
+        SummonersRift rift;
+
         // This is example code, replace with your own!
 
         // Dancing cow
