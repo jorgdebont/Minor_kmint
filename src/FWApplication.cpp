@@ -42,7 +42,7 @@ FWApplication::FWApplication(int offsetX, int offsetY, int width, int height)
     }
 
     int imgFlags = IMG_INIT_PNG | IMG_INIT_JPG;
-    if (!IMG_Init(imgFlags) & imgFlags)
+    if ((IMG_Init(imgFlags) & imgFlags) != imgFlags)
     {
         LOG(IMG_GetError());
         SDL_DestroyWindow(mWindow);
