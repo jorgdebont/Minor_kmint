@@ -29,7 +29,7 @@ void SummonersRift::Draw()
 
 void SummonersRift::Update(float deltaTime)
 {
-
+    (void)deltaTime;
 }
 
 void SummonersRift::_draw_vertices()

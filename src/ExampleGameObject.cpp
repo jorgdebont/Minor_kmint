@@ -12,6 +12,7 @@ ExampleGameObject::~ExampleGameObject() {
 }
 
 void ExampleGameObject::Update(float deltaTime) {
+    (void)deltaTime;
     const int x = (int)(sin(mApplication->GetTimeSinceStartedMS() / 300.0) * 15.0 + 400);
     SetOffset(x, 250);
 }

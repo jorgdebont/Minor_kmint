@@ -11,13 +11,13 @@
 
 FWApplication * FWApplication::mInstance;
 FWApplication::FWApplication(int offsetX, int offsetY, int width, int height)
-    : mTargetDelayMS(1000 / 60),
+    : mTimeMS(0),
+    mTargetDelayMS(1000 / 60),
     mStartCycleTimeMS(0),
     mDeltaTimeMS(0),
-    mTimeMS(0),
     mIsRunning(true),
-    mFontSize(12),
-    mFontName("")
+    mFontName(""),
+    mFontSize(12)
     //mTextBackgroundColor(0xFF,0xFF,0xFF,0xFF)
 {
     if (SDL_Init(SDL_INIT_EVERYTHING) < 0)
@@ -126,7 +126,7 @@ SDL_Texture * FWApplication::LoadTexture(const std::string & fileName)
 
 void FWApplication::DrawTexture(SDL_Texture * texture, int xOffset, int yOffset)
 {
-    SDL_Rect rect = { xOffset, yOffset };
+    SDL_Rect rect = {xOffset, yOffset, 0, 0};
 
     SDL_SetTextureBlendMode(texture, SDL_BLENDMODE_BLEND);
     SDL_QueryTexture(texture, NULL, NULL, &rect.w, &rect.h);
