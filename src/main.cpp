@@ -21,9 +21,11 @@ int main()
     
     application->SetTargetFPS(60);
     application->SetColor(Color(255, 10, 40, 255));
-    
 
-    //while (true){}
+    // Dancing cow
+    ExampleGameObject *example = new ExampleGameObject();
+    application->AddRenderable(example);
+
     while (application->IsRunning())
     {
         application->StartTick();
@@ -49,9 +51,6 @@ int main()
 
         // This is example code, replace with your own!
 
-        // Dancing cow
-        ExampleGameObject *example = new ExampleGameObject();
-        application->AddRenderable(example);
 
         // Text drawing
         application->SetColor(Color(0, 0, 0, 255));
