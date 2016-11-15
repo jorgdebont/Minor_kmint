@@ -7,15 +7,24 @@
 
 
 #include "Graph.hpp"
+#include "../IGameObject.h"
 
-class SummonersRift {
+class SummonersRift : public IGameObject {
 public:
     SummonersRift();
 
     Graph field;
+
+    virtual void Draw() override;
+    virtual void Update(float deltaTime) override;
+
 private:
 
+    const int _vertex_draw_width = 8;
+
     void _init_field();
+    void _draw_vertices();
+    void _draw_edges();
 };
 
 
