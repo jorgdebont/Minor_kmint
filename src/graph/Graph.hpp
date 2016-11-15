@@ -18,6 +18,8 @@ public:
 
     void add_vertex(Vertex* vertex);
     void add_edge(Edge* edge);
+    vector<Vertex*>& get_vertices();
+    vector<Edge*>& get_edges();
 private:
     vector<Vertex*> _vertices;
     vector<Edge*> _edges;
