@@ -15,6 +15,7 @@ set(SOURCE_FILES
         src/graph/Edge.cpp src/graph/Edge.hpp
         src/graph/SummonersRift.cpp src/graph/SummonersRift.hpp
         src/graph/Buney.cpp src/graph/Buney.hpp
+        src/graph/Cow.cpp src/graph/Cow.hpp
         src/RandomUtil.hpp src/RandomUtil.cpp
 )
 
