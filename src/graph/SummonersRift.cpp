@@ -23,8 +23,6 @@ void SummonersRift::Draw()
 {
     this->_draw_edges();
     this->_draw_vertices();
-
-    this->mApplication->SetColor(Color {255,255,255,255});
 }
 
 void SummonersRift::Update(float deltaTime)
