@@ -5,25 +5,30 @@
 #ifndef MINOR_KMINT_COW_HPP
 #define MINOR_KMINT_COW_HPP
 
+#include <deque>
 #include "../IGameObject.h"
 #include "Vertex.hpp"
 #include "Graph.hpp"
+#include "Movable.hpp"
 
-class Cow : public IGameObject {
+using std::deque;
+
+class Cow : public Movable {
 
 public:
     Cow(Graph& _graph);
-
     virtual ~Cow();
-
-//    virtual void Draw() override;
 
     virtual void Update(float deltaTime) override;
 
-    Vertex* current_vertex;
-
 private:
-    Graph& _graph;
+    void _recalculate_path();
+    void _move_to_next_vertex();
+
+    const uint32_t _move_delay_ms = 500;
+
+    uint32_t _last_move_timestamp_ms;
+    deque<Vertex*> _path;
 };
 
 

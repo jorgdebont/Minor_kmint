@@ -17,6 +17,6 @@ set(SOURCE_FILES
         src/graph/Buney.cpp src/graph/Buney.hpp
         src/graph/Cow.cpp src/graph/Cow.hpp
         src/RandomUtil.hpp src/RandomUtil.cpp
-)
+        src/graph/Movable.cpp src/graph/Movable.hpp)
 
 add_executable(Minor_kmint ${SOURCE_FILES})

@@ -35,9 +35,9 @@ int main()
 
     Buney rabbit(rift.field, nullptr);
     application->AddRenderable(&rabbit);
-    Cow* kauw = new Cow(rift.field);
-    kauw->current_vertex = rift.field.get_vertices()[5];
-    application->AddRenderable(kauw);
+
+    Cow kauw(rift.field);
+    application->AddRenderable(&kauw);
 
     while (application->IsRunning())
     {
