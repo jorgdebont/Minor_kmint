@@ -7,8 +7,8 @@
 
 
 #include "../IGameObject.h"
-#include "Vertex.hpp"
-#include "Graph.hpp"
+#include "../graph/Vertex.hpp"
+#include "../graph/Graph.hpp"
 #include "Movable.hpp"
 
 class Buney : public Movable {

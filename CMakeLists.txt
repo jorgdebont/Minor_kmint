@@ -14,9 +14,9 @@ set(SOURCE_FILES
         src/graph/Graph.cpp src/graph/Graph.hpp
         src/graph/Edge.cpp src/graph/Edge.hpp
         src/graph/SummonersRift.cpp src/graph/SummonersRift.hpp
-        src/graph/Buney.cpp src/graph/Buney.hpp
-        src/graph/Cow.cpp src/graph/Cow.hpp
+        src/GameObjects/Buney.cpp src/GameObjects/Buney.hpp
+        src/GameObjects/Cow.cpp src/GameObjects/Cow.hpp
         src/RandomUtil.hpp src/RandomUtil.cpp
-        src/graph/Movable.cpp src/graph/Movable.hpp)
+        src/GameObjects/Movable.cpp src/GameObjects/Movable.hpp)
 
 add_executable(Minor_kmint ${SOURCE_FILES})

@@ -5,12 +5,12 @@
 #include "SDL2/SDL_timer.h"
 #include <time.h>
 #include "RandomUtil.hpp"
-#include "graph/Cow.hpp"
+#include "GameObjects/Cow.hpp"
 
 #include "ExampleGameObject.h"
 #include "graph/SummonersRift.hpp"
 #include "RandomUtil.hpp"
-#include "graph/Buney.hpp"
+#include "GameObjects/Buney.hpp"
 
 
 int main()
@@ -36,7 +36,7 @@ int main()
     Buney rabbit(rift.field, nullptr);
     application->AddRenderable(&rabbit);
 
-    Cow kauw(rift.field);
+    Cow kauw(rift.field, &rabbit);
     application->AddRenderable(&kauw);
 
     while (application->IsRunning())

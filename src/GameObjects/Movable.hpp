@@ -6,8 +6,8 @@
 #define MINOR_KMINT_MOVABLE_HPP
 
 
-#include "Vertex.hpp"
-#include "Graph.hpp"
+#include "../graph/Vertex.hpp"
+#include "../graph/Graph.hpp"
 #include "../IGameObject.h"
 
 class Movable : public IGameObject {
