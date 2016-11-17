@@ -6,11 +6,24 @@
 #define MINOR_KMINT_COW_HPP
 
 #include "../IGameObject.h"
+#include "Vertex.hpp"
+#include "Graph.hpp"
 
 class Cow : public IGameObject {
 
 public:
-    virtual void Draw() override;
+    Cow(Graph& _graph);
+
+    virtual ~Cow();
+
+//    virtual void Draw() override;
+
+    virtual void Update(float deltaTime) override;
+
+    Vertex* current_vertex;
+
+private:
+    Graph& _graph;
 };
 
 

@@ -4,6 +4,8 @@
 #include <SDL2/SDL_events.h>
 #include "SDL2/SDL_timer.h"
 #include <time.h>
+#include "RandomUtil.hpp"
+#include "graph/Cow.hpp"
 
 #include "ExampleGameObject.h"
 #include "graph/SummonersRift.hpp"
@@ -33,6 +35,9 @@ int main()
 
     Buney rabbit(rift.field, nullptr);
     application->AddRenderable(&rabbit);
+    Cow* kauw = new Cow(rift.field);
+    kauw->current_vertex = rift.field.get_vertices()[5];
+    application->AddRenderable(kauw);
 
     while (application->IsRunning())
     {
@@ -55,12 +60,11 @@ int main()
             }
         }
 
-        // For the background
-        application->SetColor(Color(255, 255, 255, 255));
-
         application->UpdateGameObjects();
         application->RenderGameObjects();
         application->EndTick();
+        // For the background
+        application->SetColor(Color(255, 255, 255, 255));
     }
         
     return EXIT_SUCCESS;

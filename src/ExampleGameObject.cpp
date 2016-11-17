@@ -2,13 +2,12 @@
 #include <SDL2/SDL_render.h>
 
 ExampleGameObject::ExampleGameObject() {
-    texture = mApplication->LoadTexture("lemmling_Cartoon_cow.png");
-    this->SetTexture(texture);
+    this->SetTexture(mApplication->LoadTexture("lemmling_Cartoon_cow.png"));
     this->SetSize(50, 50);
 }
 
 ExampleGameObject::~ExampleGameObject() {
-    SDL_DestroyTexture(texture);
+    SDL_DestroyTexture(this->GetTexture());
 }
 
 void ExampleGameObject::Update(float deltaTime) {
