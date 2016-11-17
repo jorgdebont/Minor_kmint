@@ -28,7 +28,7 @@ OBJ_FILES = $(SRC_FILES:.cpp=.o)
 # Path for the resulting file
 BUILD_PATH = build/
 RES_PATH = res/
-PROGRAM_NAME = vidya
+PROGRAM_NAME = KMint
 EXEC = $(BUILD_PATH)$(PROGRAM_NAME)
 
 # Compile stuff
