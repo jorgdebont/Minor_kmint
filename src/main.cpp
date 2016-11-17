@@ -7,6 +7,8 @@
 
 #include "ExampleGameObject.h"
 #include "graph/SummonersRift.hpp"
+#include "RandomUtil.hpp"
+#include "graph/Buney.hpp"
 
 
 int main()
@@ -28,6 +30,9 @@ int main()
 
     SummonersRift rift;
     application->AddRenderable(&rift);
+
+    Buney rabbit(rift.field, nullptr);
+    application->AddRenderable(&rabbit);
 
     while (application->IsRunning())
     {
