@@ -11,7 +11,7 @@ Movable::Movable(Graph& parent_field, Vertex* start_position)
 {
 }
 
-void Movable::_jump_to_random_position()
+void Movable::jump_to_random_position()
 {
     Vertex* random_vertex = RANDOM.choice(this->_parent_field.get_vertices());
 

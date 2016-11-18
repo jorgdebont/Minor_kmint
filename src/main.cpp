@@ -27,8 +27,8 @@ int main()
     application->SetColor(Color(255, 10, 40, 255));
 
     // Dancing cow
-    ExampleGameObject *example = new ExampleGameObject();
-    application->AddRenderable(example);
+    // ExampleGameObject *example = new ExampleGameObject();
+    // application->AddRenderable(example);
 
     SummonersRift rift;
     application->AddRenderable(&rift);

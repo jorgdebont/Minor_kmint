@@ -8,9 +8,11 @@
 #include "../graph/Vertex.hpp"
 
 struct AStar_Vertex {
+    AStar_Vertex(Vertex* vertex, AStar_Vertex* parent, float total_cost, float cost_from_start, float cost_to_end);
+
     Vertex* vertex;
     AStar_Vertex* parent;
- //todo parent should be an Astar_vertex
+
     float total_cost;           // f
     float cost_from_start;      // g
     float cost_to_end;          // h (estimated)

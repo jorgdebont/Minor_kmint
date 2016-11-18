@@ -14,13 +14,13 @@ class Movable : public IGameObject {
 public:
     Movable(Graph& parent_field, Vertex* start_position);
 
+    void jump_to_random_position();
+
     virtual void Update(float deltaTime) override;
 
     Vertex* current_position;
 protected:
     Graph& _parent_field;
-
-    void _jump_to_random_position();
     void _move_to_vertex(Vertex* destination);
 };
 

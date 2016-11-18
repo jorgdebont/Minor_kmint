@@ -8,7 +8,7 @@
 Buney::Buney(Graph& parent_field, Vertex* start_position)
 : Movable(parent_field, start_position)
 {
-    this->_jump_to_random_position();
+    this->jump_to_random_position();
 
     this->_tex = this->mApplication->LoadTexture("rabbit-3.png");
     this->SetTexture(this->_tex);

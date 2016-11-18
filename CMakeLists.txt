@@ -19,6 +19,6 @@ set(SOURCE_FILES
         src/RandomUtil.hpp src/RandomUtil.cpp
         src/GameObjects/Movable.cpp src/GameObjects/Movable.hpp
         src/GameObjects/AStar_Vertex.hpp
-)
+        src/GameObjects/AStar_Vertex.cpp)
 
 add_executable(Minor_kmint ${SOURCE_FILES})
