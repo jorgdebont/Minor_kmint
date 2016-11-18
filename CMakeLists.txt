@@ -17,6 +17,8 @@ set(SOURCE_FILES
         src/GameObjects/Buney.cpp src/GameObjects/Buney.hpp
         src/GameObjects/Cow.cpp src/GameObjects/Cow.hpp
         src/RandomUtil.hpp src/RandomUtil.cpp
-        src/GameObjects/Movable.cpp src/GameObjects/Movable.hpp)
+        src/GameObjects/Movable.cpp src/GameObjects/Movable.hpp
+        src/GameObjects/AStar_Vertex.hpp
+)
 
 add_executable(Minor_kmint ${SOURCE_FILES})

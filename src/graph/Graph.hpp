@@ -20,6 +20,9 @@ public:
     void add_edge(Edge* edge);
     vector<Vertex*>& get_vertices();
     vector<Edge*>& get_edges();
+
+    static float calculate_raw_distance_between_vertici(Vertex* first, Vertex* second);
+    vector<Vertex*> get_vertex_neighbours(Vertex* start);
 private:
     vector<Vertex*> _vertices;
     vector<Edge*> _edges;

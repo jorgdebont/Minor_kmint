@@ -3,6 +3,7 @@
 //
 
 #include "Graph.hpp"
+#include <cmath>
 
 Graph::Graph()
 {
@@ -26,4 +27,26 @@ vector<Vertex*>& Graph::get_vertices()
 vector<Edge*>& Graph::get_edges()
 {
     return this->_edges;
+}
+
+float Graph::calculate_raw_distance_between_vertici(Vertex* first, Vertex* second)
+{
+    int delta_x = second->coordinates.x - first->coordinates.x;
+    int delta_y = second->coordinates.y - first->coordinates.y;
+
+    return (float)sqrt(pow(delta_x, 2) + pow(delta_y, 2));
+}
+
+vector<Vertex*> Graph::get_vertex_neighbours(Vertex* start)
+{
+    vector<Vertex*> neighbours;
+
+    for (Edge* edge : this->_edges) {
+        if (edge->first == start || edge->second == start) {
+            // If something goes wrong, look here first
+            (edge->first == start) ? neighbours.push_back(edge->second) : neighbours.push_back(edge->first);
+        }
+    }
+
+    return neighbours;
 }
