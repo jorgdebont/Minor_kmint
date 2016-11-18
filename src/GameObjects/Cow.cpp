@@ -77,9 +77,7 @@ void Cow::_recalculate_path()
 
             if (this->_contains_astar_vector_with_lower_total_cost(open_list, *astar_neighbour)) {
                 continue;
-            }
-
-            if (this->_contains_astar_vector_with_lower_total_cost(closed_list, *astar_neighbour)) {
+            } else if (this->_contains_astar_vector_with_lower_total_cost(closed_list, *astar_neighbour)) {
                 continue;
             }
 
@@ -173,4 +171,14 @@ bool Cow::_contains_astar_vector_with_lower_total_cost(list<AStar_Vertex*>& hays
     }
 
     return false;
+}
+
+void Cow::Draw()
+{
+    IGameObject::Draw();
+    this->mApplication->SetColor(Color {0, 255, 0, 255});
+
+    for(auto vertex : this->_path){
+        this->mApplication->DrawCircle(vertex->coordinates.x, vertex->coordinates.y, 8, true);
+    }
 }

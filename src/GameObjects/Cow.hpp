@@ -23,6 +23,7 @@ public:
     virtual ~Cow();
 
     virtual void Update(float deltaTime) override;
+    virtual void Draw() override;
 
 private:
     void _recalculate_path();
@@ -32,6 +33,7 @@ private:
     float _calculate_distance_to_vertex(Vertex* goal);
     AStar_Vertex* _get_lowest_cost_vert(list<AStar_Vertex*>& haystack);
     vector<AStar_Vertex*> _get_astar_neighbours(AStar_Vertex* start);
+
     AStar_Vertex* _make_astar_vertex(Vertex* vert, AStar_Vertex* parent);
     bool _contains_astar_vector_with_lower_total_cost(list<AStar_Vertex*>& haystack, AStar_Vertex& needle);
 
