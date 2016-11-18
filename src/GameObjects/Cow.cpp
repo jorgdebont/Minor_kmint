@@ -59,11 +59,11 @@ void Cow::_recalculate_path()
 //      while the open list is not empty
     while (!open_list.empty()) {
 //          find the node with the least f on the open list, call it "q"
-        AStar_Vertex* q = this->_get_lowest_cost_vert(open_list);
+        AStar_Vertex q = this->_get_lowest_cost_vert(open_list);
 //          pop q off the open list
-        open_list.remove(*q);
+        open_list.remove(q);
 //          generate q's 8 successors and set their parents to q
-        vector<AStar_Vertex> q_neighbours = this->_get_astar_neighbours(q);
+        vector<AStar_Vertex> q_neighbours = this->_get_astar_neighbours(&q);
 //          for each successor
         for (AStar_Vertex astar_neighbour : q_neighbours) {
 //              if successor is the goal, stop the search
@@ -96,7 +96,7 @@ void Cow::_recalculate_path()
 //          end
         }
 //          push q on the closed list
-        closed_list.push_back(*q);
+        closed_list.push_back(q);
 //      end
     }
 }
@@ -116,16 +116,17 @@ float Cow::_calculate_distance_to_vertex(Vertex* goal)
     return Graph::calculate_raw_distance_between_vertici(this->current_position, goal);
 }
 
-AStar_Vertex* Cow::_get_lowest_cost_vert(list<AStar_Vertex>& haystack)
+AStar_Vertex Cow::_get_lowest_cost_vert(list<AStar_Vertex>& haystack)
 {
-    AStar_Vertex* lowest = nullptr;
+    if (haystack.size() <= 0) {
+        throw "You're trying to get the lowest cost vert of an empty list";
+    }
 
-    for (AStar_Vertex& vert : haystack) {
-        if (lowest == nullptr) {
-            lowest = &vert;
-        }
-        else if (vert.total_cost < lowest->total_cost) {
-            lowest = &vert;
+    AStar_Vertex lowest = haystack.front();
+
+    for (AStar_Vertex vert : haystack) {
+        if (vert.total_cost < lowest.total_cost) {
+            lowest = vert;
         }
     }
 
