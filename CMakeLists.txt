@@ -18,7 +18,8 @@ set(SOURCE_FILES
         src/GameObjects/Cow.cpp src/GameObjects/Cow.hpp
         src/RandomUtil.hpp src/RandomUtil.cpp
         src/GameObjects/Movable.cpp src/GameObjects/Movable.hpp
-        src/GameObjects/AStar_Vertex.hpp
-        src/GameObjects/AStar_Vertex.cpp)
+        src/GameObjects/AStar_Vertex.cpp src/GameObjects/AStar_Vertex.hpp
+        src/Pathfinding/Pathfinding.cpp src/Pathfinding/Pathfinding.hpp
+        )
 
 add_executable(Minor_kmint ${SOURCE_FILES})
