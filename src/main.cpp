@@ -11,6 +11,7 @@
 #include "graph/SummonersRift.hpp"
 #include "RandomUtil.hpp"
 #include "GameObjects/Buney.hpp"
+#include "GameObjects/Pill/Pill.hpp"
 
 const int turn_delay_ms = 100;
 
@@ -39,6 +40,13 @@ int main()
 
     Cow kauw(rift.field, &rabbit);
     application->AddRenderable(&kauw);
+
+    Pill pill(rift.field);
+    application->AddRenderable(&pill);
+
+    rift.cow = &kauw;
+    rift.buney = &rabbit;
+    rift.pill = &pill;
 
     uint32_t last_turn_timestamp_ms = application->GetTimeSinceStartedMS();
 

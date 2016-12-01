@@ -9,11 +9,18 @@
 #include "Graph.hpp"
 #include "../IGameObject.h"
 
+class Cow;
+class Buney;
+class Pill;
+
 class SummonersRift : public IGameObject {
 public:
     SummonersRift();
 
     Graph field;
+    Cow* cow = nullptr;
+    Buney* buney = nullptr;
+    Pill* pill = nullptr;
 
     virtual void Draw() override;
     virtual void Update(float deltaTime) override;

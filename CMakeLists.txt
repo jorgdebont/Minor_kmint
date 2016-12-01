@@ -22,6 +22,6 @@ set(SOURCE_FILES
         src/Pathfinding/Pathfinding.cpp src/Pathfinding/Pathfinding.hpp
         src/GameObjects/Cow/CowStates/CowState.cpp src/GameObjects/Cow/CowStates/CowState.hpp
         src/GameObjects/Cow/CowStates/CowChaseState.cpp src/GameObjects/Cow/CowStates/CowChaseState.hpp
-        )
+        src/GameObjects/Pill/Pill.cpp src/GameObjects/Pill/Pill.hpp)
 
 add_executable(Minor_kmint ${SOURCE_FILES})
