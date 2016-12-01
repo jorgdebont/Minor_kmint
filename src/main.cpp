@@ -12,6 +12,7 @@
 #include "RandomUtil.hpp"
 #include "GameObjects/Buney.hpp"
 
+const int turn_delay_ms = 100;
 
 int main()
 {
@@ -39,6 +40,8 @@ int main()
     Cow kauw(rift.field, &rabbit);
     application->AddRenderable(&kauw);
 
+    uint32_t last_turn_timestamp_ms = application->GetTimeSinceStartedMS();
+
     while (application->IsRunning())
     {
         application->StartTick();
@@ -60,7 +63,14 @@ int main()
             }
         }
 
-        application->UpdateGameObjects();
+        // We make sure turns only get taken every `turn_delay_ms` miliseconds
+        uint32_t current_time = application->GetTimeSinceStartedMS();
+        if (current_time > last_turn_timestamp_ms + turn_delay_ms) {
+
+            application->UpdateGameObjects();
+
+            last_turn_timestamp_ms = current_time;
+        }
         application->RenderGameObjects();
         application->EndTick();
         // For the background

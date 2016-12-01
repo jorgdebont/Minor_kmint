@@ -13,11 +13,7 @@ CowChaseState::CowChaseState(Cow& context)
 
 void CowChaseState::update(float delta_time)
 {
-    uint32_t current_time = this->_context.mApplication->GetTimeSinceStartedMS();
-    if (current_time > this->_context._last_move_timestamp_ms + this->_context._move_delay_ms) {
-        this->_context._move_to_next_vertex();
-        this->_context._last_move_timestamp_ms = current_time;
-    }
+    this->_context._move_to_next_vertex();
 
     if (this->_context._path.empty()) {
         this->_context._recalculate_path();

@@ -33,11 +33,7 @@ private:
     void _recalculate_path();
     void _move_to_next_vertex();
 
-    const uint32_t _move_delay_ms = 100;
-
     CowState* _current_state;
-
-    uint32_t _last_move_timestamp_ms;
     deque<Vertex*> _path;
 
     Movable* _target;
