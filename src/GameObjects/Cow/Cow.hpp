@@ -7,16 +7,19 @@
 
 #include <list>
 #include <deque>
-#include "../IGameObject.h"
-#include "../graph/Vertex.hpp"
-#include "../graph/Graph.hpp"
-#include "Movable.hpp"
+#include "../../IGameObject.h"
+#include "../../graph/Vertex.hpp"
+#include "../../graph/Graph.hpp"
+#include "../Movable.hpp"
+#include "CowStates/CowState.hpp"
+#include "CowStates/CowChaseState.hpp"
 
 using std::deque;
 using std::list;
 
 class Cow : public Movable {
-
+    friend class CowState;
+    friend class CowChaseState;
 public:
     Cow(Graph& _graph, Movable* target);
     virtual ~Cow();
@@ -24,11 +27,15 @@ public:
     virtual void Update(float deltaTime) override;
     virtual void Draw() override;
 
+    void set_state(CowState* new_state);
+
 private:
     void _recalculate_path();
     void _move_to_next_vertex();
 
     const uint32_t _move_delay_ms = 100;
+
+    CowState* _current_state;
 
     uint32_t _last_move_timestamp_ms;
     deque<Vertex*> _path;

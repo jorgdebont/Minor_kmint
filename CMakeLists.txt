@@ -15,11 +15,13 @@ set(SOURCE_FILES
         src/graph/Edge.cpp src/graph/Edge.hpp
         src/graph/SummonersRift.cpp src/graph/SummonersRift.hpp
         src/GameObjects/Buney.cpp src/GameObjects/Buney.hpp
-        src/GameObjects/Cow.cpp src/GameObjects/Cow.hpp
+        src/GameObjects/Cow/Cow.cpp src/GameObjects/Cow/Cow.hpp
         src/RandomUtil.hpp src/RandomUtil.cpp
         src/GameObjects/Movable.cpp src/GameObjects/Movable.hpp
         src/GameObjects/AStar_Vertex.cpp src/GameObjects/AStar_Vertex.hpp
         src/Pathfinding/Pathfinding.cpp src/Pathfinding/Pathfinding.hpp
+        src/GameObjects/Cow/CowStates/CowState.cpp src/GameObjects/Cow/CowStates/CowState.hpp
+        src/GameObjects/Cow/CowStates/CowChaseState.cpp src/GameObjects/Cow/CowStates/CowChaseState.hpp
         )
 
 add_executable(Minor_kmint ${SOURCE_FILES})

@@ -5,7 +5,7 @@
 #include "SDL2/SDL_timer.h"
 #include <time.h>
 #include "RandomUtil.hpp"
-#include "GameObjects/Cow.hpp"
+#include "GameObjects/Cow/Cow.hpp"
 
 #include "ExampleGameObject.h"
 #include "graph/SummonersRift.hpp"
