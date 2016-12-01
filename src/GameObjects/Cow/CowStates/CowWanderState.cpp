@@ -14,7 +14,7 @@ using std::vector;
 CowWanderState::CowWanderState(Cow& context)
 : CowState(context)
 {
-
+    this->name = "Cow wander";
 }
 
 void CowWanderState::update(float delta_time)

@@ -8,6 +8,8 @@
 CowChaseState::CowChaseState(Cow& context)
 : CowState(context)
 {
+    this->name = "Cow chase buney";
+
     this->_context._target = (Movable*)this->_context._parent_field.buney;
 }
 

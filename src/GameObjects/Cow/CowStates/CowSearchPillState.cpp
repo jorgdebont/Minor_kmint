@@ -8,6 +8,8 @@
 CowSearchPillState::CowSearchPillState(Cow& context)
 : CowState(context)
 {
+    this->name = "Cow search pill";
+
     this->_context._target = (Movable*)this->_context._parent_field.pill;
     this->_context._recalculate_path();
 }

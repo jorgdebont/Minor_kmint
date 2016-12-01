@@ -56,6 +56,9 @@ void Cow::Draw()
     for(auto vertex : this->_path){
         this->mApplication->DrawCircle(vertex->coordinates.x, vertex->coordinates.y, 8, true);
     }
+
+    this->mApplication->SetColor({0,0,0,255});
+    this->mApplication->DrawText("Current cow state: " + this->_current_state->name, 700, 200);
 }
 
 void Cow::set_state(CowState* new_state)
