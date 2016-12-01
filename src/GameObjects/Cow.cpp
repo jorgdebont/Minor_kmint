@@ -46,10 +46,7 @@ void Cow::_recalculate_path()
 {
     vector<Vertex*> calculated_path = Pathfinding::astar(this->_parent_field, this->current_position, this->_target->current_position);
 
-    this->_path.clear();
-    for (auto brommer : calculated_path) {
-        this->_path.push_back(brommer);
-    }
+    this->_path = deque<Vertex*>(calculated_path.begin(), calculated_path.end());
 }
 
 void Cow::_move_to_next_vertex()
