@@ -10,7 +10,7 @@
 
 class Pill : public Movable {
 public:
-    Pill(Graph& field);
+    Pill(SummonersRift& field);
 private:
 };
 

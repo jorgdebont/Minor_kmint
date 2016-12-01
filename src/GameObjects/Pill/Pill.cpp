@@ -4,7 +4,7 @@
 
 #include "Pill.hpp"
 
-Pill::Pill(Graph& field)
+Pill::Pill(SummonersRift& field)
 : Movable(field, nullptr)
 {
     this->jump_to_random_position();

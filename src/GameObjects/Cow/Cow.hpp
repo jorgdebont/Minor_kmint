@@ -13,6 +13,8 @@
 #include "../Movable.hpp"
 #include "CowStates/CowState.hpp"
 #include "CowStates/CowChaseState.hpp"
+#include "CowStates/CowWanderState.hpp"
+#include "CowStates/CowSearchPillState.hpp"
 
 using std::deque;
 using std::list;
@@ -20,8 +22,10 @@ using std::list;
 class Cow : public Movable {
     friend class CowState;
     friend class CowChaseState;
+    friend class CowWanderState;
+    friend class CowSearchPillState;
 public:
-    Cow(Graph& _graph, Movable* target);
+    Cow(SummonersRift& _graph, Movable* target);
     virtual ~Cow();
 
     virtual void Update(float deltaTime) override;

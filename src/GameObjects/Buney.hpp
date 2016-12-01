@@ -13,7 +13,7 @@
 
 class Buney : public Movable {
 public:
-    Buney(Graph& parent_field, Vertex* start_position);
+    Buney(SummonersRift& parent_field, Vertex* start_position);
 
     virtual void Update(float deltaTime) override;
 

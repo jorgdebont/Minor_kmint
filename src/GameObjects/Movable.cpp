@@ -5,7 +5,7 @@
 #include "Movable.hpp"
 #include "../RandomUtil.hpp"
 
-Movable::Movable(Graph& parent_field, Vertex* start_position)
+Movable::Movable(SummonersRift& parent_field, Vertex* start_position)
 : current_position(start_position)
 , _parent_field(parent_field)
 {
@@ -13,7 +13,7 @@ Movable::Movable(Graph& parent_field, Vertex* start_position)
 
 void Movable::jump_to_random_position()
 {
-    Vertex* random_vertex = RANDOM.choice(this->_parent_field.get_vertices());
+    Vertex* random_vertex = RANDOM.choice(this->_parent_field.field.get_vertices());
 
     this->_move_to_vertex(random_vertex);
 }

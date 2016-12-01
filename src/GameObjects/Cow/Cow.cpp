@@ -7,9 +7,9 @@
 #include "Cow.hpp"
 #include "../../Pathfinding/Pathfinding.hpp"
 
-Cow::Cow(Graph& _graph, Movable* target)
+Cow::Cow(SummonersRift& _graph, Movable* target)
 : Movable(_graph, nullptr)
-, _current_state(new CowChaseState(*this))
+, _current_state(new CowWanderState(*this))
 , _target(target)
 {
     this->jump_to_random_position();
@@ -32,7 +32,7 @@ void Cow::Update(float deltaTime)
 
 void Cow::_recalculate_path()
 {
-    vector<Vertex*> calculated_path = Pathfinding::astar(this->_parent_field, this->current_position, this->_target->current_position);
+    vector<Vertex*> calculated_path = Pathfinding::astar(this->_parent_field.field, this->current_position, this->_target->current_position);
 
     this->_path = deque<Vertex*>(calculated_path.begin(), calculated_path.end());
 }

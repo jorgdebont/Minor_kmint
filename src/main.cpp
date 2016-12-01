@@ -35,13 +35,13 @@ int main()
     SummonersRift rift;
     application->AddRenderable(&rift);
 
-    Buney rabbit(rift.field, nullptr);
+    Buney rabbit(rift, nullptr);
     application->AddRenderable(&rabbit);
 
-    Cow kauw(rift.field, &rabbit);
+    Cow kauw(rift, &rabbit);
     application->AddRenderable(&kauw);
 
-    Pill pill(rift.field);
+    Pill pill(rift);
     application->AddRenderable(&pill);
 
     rift.cow = &kauw;
