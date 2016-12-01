@@ -10,7 +10,6 @@
 Cow::Cow(Graph& _graph, Movable* target)
 : Movable(_graph, nullptr)
 , _current_state(new CowChaseState(*this))
-, _last_move_timestamp_ms(mApplication->GetTimeSinceStartedMS())
 , _target(target)
 {
     this->jump_to_random_position();
