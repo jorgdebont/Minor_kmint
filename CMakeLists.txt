@@ -14,7 +14,7 @@ set(SOURCE_FILES
         src/graph/Graph.cpp src/graph/Graph.hpp
         src/graph/Edge.cpp src/graph/Edge.hpp
         src/graph/SummonersRift.cpp src/graph/SummonersRift.hpp
-        src/GameObjects/Buney.cpp src/GameObjects/Buney.hpp
+        src/GameObjects/Buney/Buney.cpp src/GameObjects/Buney/Buney.hpp
         src/GameObjects/Cow/Cow.cpp src/GameObjects/Cow/Cow.hpp
         src/RandomUtil.hpp src/RandomUtil.cpp
         src/GameObjects/Movable.cpp src/GameObjects/Movable.hpp

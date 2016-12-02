@@ -3,7 +3,7 @@
 //
 
 #include "Buney.hpp"
-#include "../RandomUtil.hpp"
+#include "../../RandomUtil.hpp"
 
 Buney::Buney(SummonersRift& parent_field, Vertex* start_position)
 : Movable(parent_field, start_position)

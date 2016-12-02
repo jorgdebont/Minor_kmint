@@ -6,10 +6,10 @@
 #define MINOR_KMINT_BUNEY_HPP
 
 
-#include "../IGameObject.h"
-#include "../graph/Vertex.hpp"
-#include "../graph/Graph.hpp"
-#include "Movable.hpp"
+#include "../../IGameObject.h"
+#include "../../graph/Vertex.hpp"
+#include "../../graph/Graph.hpp"
+#include "../Movable.hpp"
 
 class Buney : public Movable {
 public:
