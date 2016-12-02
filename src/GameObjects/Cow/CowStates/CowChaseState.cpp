@@ -4,6 +4,7 @@
 
 #include "CowChaseState.hpp"
 #include "../Cow.hpp"
+#include "../../Buney/Buney.hpp"
 
 CowChaseState::CowChaseState(Cow& context)
 : CowState(context)
@@ -19,7 +20,11 @@ void CowChaseState::update(float delta_time)
     this->_context._move_to_next_vertex();
 
     if (this->_context.current_position == this->_context._target->current_position) {
-        this->_context.set_state(new CowWanderState(this->_context));
-        this->_context._target->jump_to_random_position();
+        Buney* caught_buney = dynamic_cast<Buney*>(this->_context._target);
+
+        if (caught_buney) {
+            this->_context.set_state(new CowWanderState(this->_context));
+            caught_buney->die();
+        }
     }
 }

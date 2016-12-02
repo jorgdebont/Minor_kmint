@@ -10,15 +10,17 @@
 #include "../../graph/Vertex.hpp"
 #include "../../graph/Graph.hpp"
 #include "../Movable.hpp"
+#include "BuneyState.hpp"
 
 class Buney : public Movable {
 public:
     Buney(SummonersRift& parent_field, Vertex* start_position);
 
     virtual void Update(float deltaTime) override;
-
+    void die();
 private:
 
+    BuneyState* _current_state;
     SDL_Texture* _tex;
 };
 
