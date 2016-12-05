@@ -32,3 +32,8 @@ void Movable::Update(float deltaTime)
         (uint32_t)this->current_position->coordinates.y
     );
 }
+
+bool Movable::is_on_position(Vertex* position)
+{
+    return this->current_position == position;
+}

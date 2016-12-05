@@ -16,6 +16,7 @@ public:
     Movable(SummonersRift& parent_field, Vertex* start_position);
 
     void jump_to_random_position();
+    bool is_on_position(Vertex* position);
 
     virtual void Update(float deltaTime) override;
 

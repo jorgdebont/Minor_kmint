@@ -5,10 +5,11 @@
 #include "Buney.hpp"
 #include "../../RandomUtil.hpp"
 #include "BuneyStates/IdleState.hpp"
+#include "BuneyStates/BuneyFleeForeverState.hpp"
 
 Buney::Buney(SummonersRift& parent_field, Vertex* start_position)
 : Movable(parent_field, start_position)
-, _current_state(new BuneyWanderState(*this))
+, _current_state(new BuneyFleeForeverState(*this))
 {
     this->jump_to_random_position();
 
