@@ -10,7 +10,7 @@
 #include "../../graph/Vertex.hpp"
 #include "../../graph/Graph.hpp"
 #include "../Movable.hpp"
-#include "BuneyState.hpp"
+#include "BuneyStates/BuneyState.hpp"
 
 class Buney : public Movable {
 public:
