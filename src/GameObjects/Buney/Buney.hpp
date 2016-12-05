@@ -11,8 +11,10 @@
 #include "../../graph/Graph.hpp"
 #include "../Movable.hpp"
 #include "BuneyStates/BuneyState.hpp"
+#include "BuneyStates/BuneyWanderState.hpp"
 
 class Buney : public Movable {
+    friend class BuneyWanderState;
 public:
     Buney(SummonersRift& parent_field, Vertex* start_position);
 

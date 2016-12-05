@@ -26,6 +26,7 @@ set(SOURCE_FILES
         src/GameObjects/Cow/CowStates/CowWanderState.cpp src/GameObjects/Cow/CowStates/CowWanderState.hpp
         src/GameObjects/Cow/CowStates/CowSearchPillState.cpp src/GameObjects/Cow/CowStates/CowSearchPillState.hpp
         src/GameObjects/Buney/BuneyStates/BuneyState.cpp src/GameObjects/Buney/BuneyStates/BuneyState.hpp
-        src/GameObjects/Buney/BuneyStates/IdleState.cpp src/GameObjects/Buney/BuneyStates/IdleState.hpp)
+        src/GameObjects/Buney/BuneyStates/IdleState.cpp src/GameObjects/Buney/BuneyStates/IdleState.hpp
+        src/GameObjects/Buney/BuneyStates/BuneyWanderState.cpp src/GameObjects/Buney/BuneyStates/BuneyWanderState.hpp)
 
 add_executable(Minor_kmint ${SOURCE_FILES})

@@ -13,7 +13,7 @@ public:
     BuneyState(Buney& context);
 
     virtual void update(float delta_time) = 0;
-private:
+protected:
     Buney& _context;
 };
 
