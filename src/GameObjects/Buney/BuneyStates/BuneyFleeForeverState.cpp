@@ -38,5 +38,19 @@ void BuneyFleeForeverState::update(float delta_time)
 
 bool BuneyFleeForeverState::is_safe_vertex(Vertex* to_check)
 {
-    return !this->_context._parent_field.cow->is_on_position(to_check);
+    // Check whether the cow is on the vertex
+    if (this->_context._parent_field.cow->is_on_position(to_check)) {
+        return false;
+    }
+
+    // Check whether the cow is on neighbouring vertices (since it could then directly step on us)
+    vector<Vertex*> to_check_neighbours = this->_context._parent_field.field.get_vertex_neighbours(to_check);
+    for (Vertex* to_check_neighbour : to_check_neighbours) {
+        if (this->_context._parent_field.cow->is_on_position(to_check_neighbour)) {
+            return false;
+        }
+    }
+
+    // If we get here, the cow is neither on to_check or it's neighbouring vertices
+    return true;
 }
