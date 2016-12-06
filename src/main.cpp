@@ -70,7 +70,9 @@ int main()
                 break;
             case SDL_KEYDOWN:
                 switch (event.key.keysym.sym){
-
+                    case SDLK_SPACE:
+                        application->UpdateGameObjects();
+                        break;
                 default:
                     break;
                 }
@@ -78,13 +80,13 @@ int main()
         }
 
         // We make sure turns only get taken every `turn_delay_ms` miliseconds
-        uint32_t current_time = application->GetTimeSinceStartedMS();
-        if (current_time > last_turn_timestamp_ms + turn_delay_ms) {
-
-            application->UpdateGameObjects();
-
-            last_turn_timestamp_ms = current_time;
-        }
+//        uint32_t current_time = application->GetTimeSinceStartedMS();
+//        if (current_time > last_turn_timestamp_ms + turn_delay_ms) {
+//
+//            application->UpdateGameObjects();
+//
+//            last_turn_timestamp_ms = current_time;
+//        }
         application->RenderGameObjects();
         application->EndTick();
         // For the background
