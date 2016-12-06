@@ -9,6 +9,8 @@
 BuneySearchPillState::BuneySearchPillState(Buney& context)
 : BuneyState(context)
 {
+    this->name = "Buney search pill";
+
     this->_context._target = (Movable*)this->_context._parent_field.pill;
     this->_context._recalculate_path();
 }

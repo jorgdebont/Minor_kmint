@@ -9,6 +9,8 @@
 BuneyAttackState::BuneyAttackState(Buney& context)
 : BuneyState(context)
 {
+    this->name = "Buney attack";
+
     this->_context._target = (Movable*)this->_context._parent_field.cow;
     this->_context._recalculate_path();
 }

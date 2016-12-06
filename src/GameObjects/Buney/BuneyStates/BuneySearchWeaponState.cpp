@@ -9,6 +9,8 @@
 BuneySearchWeaponState::BuneySearchWeaponState(Buney& context)
 : BuneyState(context)
 {
+    this->name = "Buney search weapon";
+
     this->_context._target = (Movable*)this->_context._parent_field.weapon;
     this->_context._recalculate_path();
 }

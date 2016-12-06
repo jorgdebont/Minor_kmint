@@ -8,9 +8,10 @@
 
 CowSleepState::CowSleepState(Cow& context)
 : CowState(context)
-, name("sleeping")
 , _turns_remaining(5)
-{}
+{
+    this->name = "sleeping";
+}
 
 void CowSleepState::update(float delta_time)
 {

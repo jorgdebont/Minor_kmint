@@ -11,7 +11,7 @@ BuneyFleeState::BuneyFleeState(Buney& context)
 , _flee_state(context)
 , _turn_counter(0)
 {
-
+    this->name = "Buney flee temporarily";
 }
 
 void BuneyFleeState::update(float delta_time)

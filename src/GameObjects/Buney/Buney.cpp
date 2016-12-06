@@ -11,7 +11,7 @@
 
 Buney::Buney(SummonersRift& parent_field, Vertex* start_position)
 : Movable(parent_field, start_position)
-, _current_state(new BuneyFleeForeverState(*this))
+, _current_state(new BuneyWanderState(*this))
 {
     this->jump_to_random_position();
 
@@ -67,4 +67,28 @@ bool Buney::_cow_is_in_range_of_vertex(Vertex* to_check)
 
     // If we get here, the cow is neither on to_check or it's neighbouring vertices
     return false;
+}
+
+bool Buney::_path_contains_cow(vector<Vertex*> path)
+{
+    for (Vertex* vert : path) {
+        if (this->_parent_field.cow->is_on_position(vert)) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+void Buney::Draw()
+{
+    IGameObject::Draw();
+
+    this->mApplication->SetColor({250,0,0,255});
+    for (Vertex* vert : this->_path) {
+        this->mApplication->DrawCircle(vert->coordinates.x, vert->coordinates.y, 8, true);
+    }
+
+    this->mApplication->SetColor({0,0,0,255});
+    this->mApplication->DrawText("Current buney state: " + this->_current_state->name, 650, 250);
 }

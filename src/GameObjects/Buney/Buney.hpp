@@ -32,12 +32,15 @@ public:
 
     virtual void Update(float deltaTime) override;
 
+    virtual void Draw() override;
+
     void set_state(BuneyState* new_state);
 
 private:
     void _recalculate_path();
     void _move_to_next_vertex();
     bool _cow_is_in_range_of_vertex(Vertex* to_chec);
+    bool _path_contains_cow(vector<Vertex*> path);
 
     BuneyState* _current_state;
     SDL_Texture* _tex;
