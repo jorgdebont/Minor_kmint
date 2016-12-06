@@ -13,6 +13,7 @@
 #include "BuneyStates/BuneyState.hpp"
 #include "BuneyStates/BuneyWanderState.hpp"
 #include "BuneyStates/BuneySearchPillState.hpp"
+#include "BuneyStates/BuneySearchWeaponState.hpp"
 
 #include <deque>
 
@@ -21,6 +22,7 @@ using std::deque;
 class Buney : public Movable {
     friend class BuneyWanderState;
     friend class BuneySearchPillState;
+    friend class BuneySearchWeaponState;
 public:
     Buney(SummonersRift& parent_field, Vertex* start_position);
 

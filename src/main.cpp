@@ -48,9 +48,11 @@ int main()
     Weapon weapon(rift);
     application->AddRenderable(&weapon);
 
+    // TODO: This is ugly and stupid
     rift.cow = &kauw;
     rift.buney = &rabbit;
     rift.pill = &pill;
+    rift.weapon = &weapon;
 
     uint32_t last_turn_timestamp_ms = application->GetTimeSinceStartedMS();
 

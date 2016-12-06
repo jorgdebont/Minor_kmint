@@ -12,6 +12,7 @@
 class Cow;
 class Buney;
 class Pill;
+class Weapon;
 
 class SummonersRift : public IGameObject {
 public:
@@ -21,6 +22,7 @@ public:
     Cow* cow = nullptr;
     Buney* buney = nullptr;
     Pill* pill = nullptr;
+    Weapon* weapon = nullptr;
 
     virtual void Draw() override;
     virtual void Update(float deltaTime) override;
