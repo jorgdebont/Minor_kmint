@@ -12,6 +12,7 @@
 #include "RandomUtil.hpp"
 #include "GameObjects/Buney/Buney.hpp"
 #include "GameObjects/Pill/Pill.hpp"
+#include "GameObjects/Weapon/Weapon.hpp"
 
 const int turn_delay_ms = 100;
 
@@ -43,6 +44,9 @@ int main()
 
     Pill pill(rift);
     application->AddRenderable(&pill);
+
+    Weapon weapon(rift);
+    application->AddRenderable(&weapon);
 
     rift.cow = &kauw;
     rift.buney = &rabbit;
