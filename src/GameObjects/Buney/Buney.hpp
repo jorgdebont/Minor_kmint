@@ -22,6 +22,7 @@
 using std::deque;
 
 class Buney : public Movable {
+    friend class BuneyState;
     friend class BuneyWanderState;
     friend class BuneySearchPillState;
     friend class BuneyAttackState;
@@ -33,6 +34,8 @@ public:
     virtual void Update(float deltaTime) override;
 
     virtual void Draw() override;
+
+    virtual void die() override;
 
     void set_state(BuneyState* new_state);
 

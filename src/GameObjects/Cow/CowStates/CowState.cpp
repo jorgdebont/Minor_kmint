@@ -3,9 +3,10 @@
 //
 
 #include "CowState.hpp"
+#include "../Cow.hpp"
 
 CowState::CowState(Cow& context)
 : _context(context)
 {
-
+    this->_context._path.clear();
 }

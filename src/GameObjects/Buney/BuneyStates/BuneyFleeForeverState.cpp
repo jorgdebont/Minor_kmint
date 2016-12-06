@@ -13,6 +13,8 @@ BuneyFleeForeverState::BuneyFleeForeverState(Buney& context)
 : BuneyState(context)
 {
     this->name = "Buney Flee forever";
+
+    this->update(0);
 }
 
 void BuneyFleeForeverState::update(float delta_time)

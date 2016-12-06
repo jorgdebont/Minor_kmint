@@ -31,6 +31,8 @@ public:
     virtual void Update(float deltaTime) override;
     virtual void Draw() override;
 
+    virtual void die() override;
+
     void set_state(CowState* new_state);
 
 private:

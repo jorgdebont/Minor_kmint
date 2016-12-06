@@ -92,3 +92,9 @@ void Buney::Draw()
     this->mApplication->SetColor({0,0,0,255});
     this->mApplication->DrawText("Current buney state: " + this->_current_state->name, 650, 250);
 }
+
+void Buney::die()
+{
+    Movable::die();
+    this->set_state(new BuneyWanderState(*this));
+}

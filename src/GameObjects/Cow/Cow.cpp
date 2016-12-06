@@ -65,3 +65,9 @@ void Cow::set_state(CowState* new_state)
 {
     this->_current_state = new_state;
 }
+
+void Cow::die()
+{
+    Movable::die();
+    this->set_state(new CowWanderState(*this));
+}

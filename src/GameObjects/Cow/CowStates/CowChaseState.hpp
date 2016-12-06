@@ -7,6 +7,7 @@
 
 
 #include "CowState.hpp"
+#include "../../Movable.hpp"
 
 class CowChaseState : public CowState {
 public:

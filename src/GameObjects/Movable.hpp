@@ -20,7 +20,7 @@ public:
 
     virtual void Update(float deltaTime) override;
 
-    void die();
+    virtual void die();
 
     Vertex* current_position;
 

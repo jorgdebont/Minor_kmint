@@ -13,6 +13,8 @@ BuneySearchWeaponState::BuneySearchWeaponState(Buney& context)
 
     this->_context._target = (Movable*)this->_context._parent_field.weapon;
     this->_context._recalculate_path();
+    // This is a hack
+    this->update(0);
 }
 
 void BuneySearchWeaponState::update(float delta_time)

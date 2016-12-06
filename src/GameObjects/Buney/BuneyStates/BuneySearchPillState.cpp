@@ -12,11 +12,12 @@ BuneySearchPillState::BuneySearchPillState(Buney& context)
     this->name = "Buney search pill";
 
     this->_context._target = (Movable*)this->_context._parent_field.pill;
-    this->_context._recalculate_path();
+    this->update(0);
 }
 
 void BuneySearchPillState::update(float delta_time)
 {
+    this->_context._recalculate_path();
     this->_context._move_to_next_vertex();
 
     if (this->_context.current_position == this->_context._target->current_position) {

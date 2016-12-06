@@ -12,11 +12,11 @@ BuneyAttackState::BuneyAttackState(Buney& context)
     this->name = "Buney attack";
 
     this->_context._target = (Movable*)this->_context._parent_field.cow;
-    this->_context._recalculate_path();
 }
 
 void BuneyAttackState::update(float delta_time)
 {
+    this->_context._recalculate_path();
     this->_context._move_to_next_vertex();
 
     if (this->_context._cow_is_in_range_of_vertex(this->_context.current_position)) {
