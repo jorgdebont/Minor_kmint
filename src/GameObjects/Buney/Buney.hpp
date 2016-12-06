@@ -16,6 +16,7 @@
 #include "BuneyStates/BuneySearchWeaponState.hpp"
 #include "BuneyStates/BuneyAttackState.hpp"
 #include "BuneyStates/BuneyFleeForeverState.hpp"
+#include "BuneyStates/IdleState.hpp"
 
 #include <deque>
 
@@ -28,6 +29,7 @@ class Buney : public Movable {
     friend class BuneyAttackState;
     friend class BuneySearchWeaponState;
     friend class BuneyFleeForeverState;
+    friend class IdleState;
 public:
     Buney(SummonersRift& parent_field, Vertex* start_position);
 
@@ -39,6 +41,7 @@ public:
 
     void set_state(BuneyState* new_state);
 
+    bool _has_pill;
 private:
     void _recalculate_path();
     void _move_to_next_vertex();

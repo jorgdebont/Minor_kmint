@@ -22,7 +22,7 @@ void CowChaseState::update(float delta_time)
     if (this->_context.current_position == this->_context._target->current_position) {
         Buney* caught_buney = dynamic_cast<Buney*>(this->_context._target);
 
-        if (caught_buney) {
+        if (caught_buney && !caught_buney->_has_pill) {
             this->_context.set_state(new CowWanderState(this->_context));
             caught_buney->die();
         }

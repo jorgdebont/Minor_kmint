@@ -15,7 +15,9 @@ CowSleepState::CowSleepState(Cow& context)
 
 void CowSleepState::update(float delta_time)
 {
-    if(_turns_remaining--){ //check turns remaining
+    _turns_remaining--;
+
+    if(_turns_remaining == 0){ //check turns remaining
         this->_context.set_state(new CowWanderState(this->_context));
     }
 }

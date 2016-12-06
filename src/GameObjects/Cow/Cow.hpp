@@ -32,6 +32,7 @@ public:
     virtual void Draw() override;
 
     virtual void die() override;
+    void sleep();
 
     void set_state(CowState* new_state);
 

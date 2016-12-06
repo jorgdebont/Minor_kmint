@@ -26,7 +26,7 @@ void BuneyFleeForeverState::update(float delta_time)
 
         if (!this->_context._cow_is_in_range_of_vertex(flee_candidate)) {
             this->_context._move_to_vertex(flee_candidate);
-            break;
+            return;
         } else {
             // I think this is one of the flaws of the STL. A "remove by value" statement should not be this long or unintuitive
             // Sure, I could make a generic free function for this, but I'd have just another Util class to move around with
@@ -35,5 +35,8 @@ void BuneyFleeForeverState::update(float delta_time)
         }
     }
 
+    // quality code right here mi frend
+    neighbours = this->_context._parent_field.field.get_vertex_neighbours(this->_context.current_position);
+    this->_context._move_to_vertex(RANDOM.choice(neighbours));
     // If we get here and there is no way to escape from the Cow, the Buney accepts his fate and idles
 }

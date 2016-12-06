@@ -6,12 +6,13 @@
 #include <iostream>
 #include "Cow.hpp"
 #include "../../Pathfinding/Pathfinding.hpp"
+#include "CowStates/CowSleepState.hpp"
 
 Cow::Cow(SummonersRift& _graph, Movable* target)
 : Movable(_graph, nullptr)
-, _current_state(new CowWanderState(*this))
 , _target(target)
 {
+    this->_current_state = new CowWanderState(*this);
     this->jump_to_random_position();
 
     this->SetTexture(mApplication->LoadTexture("lemmling_Cartoon_cow.png"));
@@ -70,4 +71,9 @@ void Cow::die()
 {
     Movable::die();
     this->set_state(new CowWanderState(*this));
+}
+
+void Cow::sleep()
+{
+    this->set_state(new CowSleepState(*this));
 }

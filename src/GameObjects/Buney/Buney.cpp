@@ -12,6 +12,7 @@
 Buney::Buney(SummonersRift& parent_field, Vertex* start_position)
 : Movable(parent_field, start_position)
 , _current_state(new BuneyWanderState(*this))
+, _has_pill(false)
 {
     this->jump_to_random_position();
 
