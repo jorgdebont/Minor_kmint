@@ -31,6 +31,8 @@ set(SOURCE_FILES
         src/GameObjects/Buney/BuneyStates/BuneyFleeForeverState.cpp src/GameObjects/Buney/BuneyStates/BuneyFleeForeverState.hpp
         src/GameObjects/Buney/BuneyStates/BuneyFleeState.cpp src/GameObjects/Buney/BuneyStates/BuneyFleeState.hpp
         src/GameObjects/Buney/BuneyStates/BuneySearchPillState.cpp src/GameObjects/Buney/BuneyStates/BuneySearchPillState.hpp
-        src/GameObjects/Weapon/Weapon.cpp src/GameObjects/Weapon/Weapon.hpp)
+	src/GameObjects/Weapon/Weapon.cpp src/GameObjects/Weapon/Weapon.hpp
+	src/GameObjects/Buney/BuneyStates/BuneyAttackState.cpp src/GameObjects/Buney/BuneyStates/BuneyAttackState.hpp
+)
 
 add_executable(Minor_kmint ${SOURCE_FILES})
