@@ -29,6 +29,7 @@ set(SOURCE_FILES
         src/GameObjects/Buney/BuneyStates/IdleState.cpp src/GameObjects/Buney/BuneyStates/IdleState.hpp
         src/GameObjects/Buney/BuneyStates/BuneyWanderState.cpp src/GameObjects/Buney/BuneyStates/BuneyWanderState.hpp
         src/GameObjects/Buney/BuneyStates/BuneyFleeForeverState.cpp src/GameObjects/Buney/BuneyStates/BuneyFleeForeverState.hpp
-        src/GameObjects/Buney/BuneyStates/BuneyFleeState.cpp src/GameObjects/Buney/BuneyStates/BuneyFleeState.hpp)
+        src/GameObjects/Buney/BuneyStates/BuneyFleeState.cpp src/GameObjects/Buney/BuneyStates/BuneyFleeState.hpp
+        src/GameObjects/Buney/BuneyStates/BuneySearchPillState.cpp src/GameObjects/Buney/BuneyStates/BuneySearchPillState.hpp)
 
 add_executable(Minor_kmint ${SOURCE_FILES})

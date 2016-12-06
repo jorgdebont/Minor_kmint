@@ -12,9 +12,15 @@
 #include "../Movable.hpp"
 #include "BuneyStates/BuneyState.hpp"
 #include "BuneyStates/BuneyWanderState.hpp"
+#include "BuneyStates/BuneySearchPillState.hpp"
+
+#include <deque>
+
+using std::deque;
 
 class Buney : public Movable {
     friend class BuneyWanderState;
+    friend class BuneySearchPillState;
 public:
     Buney(SummonersRift& parent_field, Vertex* start_position);
 
@@ -24,9 +30,15 @@ public:
 
     void die();
 private:
+    void _recalculate_path();
+    void _move_to_next_vertex();
 
     BuneyState* _current_state;
     SDL_Texture* _tex;
+
+    deque<Vertex*> _path;
+
+    Movable* _target;
 };
 
 
