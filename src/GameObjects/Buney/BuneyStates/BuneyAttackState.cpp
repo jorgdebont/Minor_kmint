@@ -17,14 +17,14 @@ void BuneyAttackState::update(float delta_time)
 {
     this->_context._move_to_next_vertex();
 
-    if (cow_in_shoot_range(this->_context.current_position)) {
+    if (this->_cow_in_shoot_range(this->_context.current_position)) {
         this->_context._parent_field.cow->die();
         this->_context.set_state(new BuneyWanderState(this->_context));
     }
 
 }
 
-bool BuneyAttackState::cow_in_shoot_range(Vertex* to_check)
+bool BuneyAttackState::_cow_in_shoot_range(Vertex* to_check)
 {
     if (this->_context._parent_field.cow->is_on_position(to_check)) {
         return true;

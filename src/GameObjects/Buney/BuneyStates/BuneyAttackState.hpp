@@ -15,7 +15,7 @@ public:
     virtual void update(float delta_time) override;
 
 private:
-    bool cow_in_shoot_range(Vertex* to_check);
+    bool _cow_in_shoot_range(Vertex* to_check);
 };
 
 
