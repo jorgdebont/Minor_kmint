@@ -19,5 +19,4 @@ public:
 private:
 };
 
-
 #endif //MINOR_KMINT_BUNEYWANDERSTATE_HPP

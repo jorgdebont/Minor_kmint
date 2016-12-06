@@ -25,6 +25,11 @@ void Buney::Update(float deltaTime)
     this->_current_state->update(deltaTime);
 }
 
+void Buney::set_state(BuneyState* new_state)
+{
+    this->_current_state = new_state;
+}
+
 void Buney::die()
 {
     this->jump_to_random_position();

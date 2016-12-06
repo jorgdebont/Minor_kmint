@@ -19,6 +19,9 @@ public:
     Buney(SummonersRift& parent_field, Vertex* start_position);
 
     virtual void Update(float deltaTime) override;
+
+    void set_state(BuneyState* new_state);
+
     void die();
 private:
 
