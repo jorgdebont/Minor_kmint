@@ -37,3 +37,8 @@ bool Movable::is_on_position(Vertex* position)
 {
     return this->current_position == position;
 }
+
+void Movable::die()
+{
+    this->jump_to_random_position();
+}

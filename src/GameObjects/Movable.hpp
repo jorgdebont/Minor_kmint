@@ -20,6 +20,8 @@ public:
 
     virtual void Update(float deltaTime) override;
 
+    void die();
+
     Vertex* current_position;
 
     SummonersRift& _parent_field;

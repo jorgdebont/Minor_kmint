@@ -31,11 +31,6 @@ void Buney::set_state(BuneyState* new_state)
     this->_current_state = new_state;
 }
 
-void Buney::die()
-{
-    this->jump_to_random_position();
-}
-
 void Buney::_recalculate_path()
 {
     vector<Vertex*> calculated_path = Pathfinding::astar(this->_parent_field.field, this->current_position, this->_target->current_position);
