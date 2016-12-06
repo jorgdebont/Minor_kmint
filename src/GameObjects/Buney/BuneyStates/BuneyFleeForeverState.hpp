@@ -17,8 +17,6 @@ public:
 
     void update(float delta_time) override;
 
-    bool is_safe_vertex(Vertex* to_check);
-
 private:
 };
 

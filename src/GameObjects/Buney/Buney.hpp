@@ -15,6 +15,7 @@
 #include "BuneyStates/BuneySearchPillState.hpp"
 #include "BuneyStates/BuneySearchWeaponState.hpp"
 #include "BuneyStates/BuneyAttackState.hpp"
+#include "BuneyStates/BuneyFleeForeverState.hpp"
 
 #include <deque>
 
@@ -25,6 +26,7 @@ class Buney : public Movable {
     friend class BuneySearchPillState;
     friend class BuneyAttackState;
     friend class BuneySearchWeaponState;
+    friend class BuneyFleeForeverState;
 public:
     Buney(SummonersRift& parent_field, Vertex* start_position);
 
@@ -35,6 +37,7 @@ public:
 private:
     void _recalculate_path();
     void _move_to_next_vertex();
+    bool _cow_is_in_range_of_vertex(Vertex* to_chec);
 
     BuneyState* _current_state;
     SDL_Texture* _tex;
