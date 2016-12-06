@@ -19,7 +19,6 @@ void BuneySearchWeaponState::update(float delta_time)
 
     if (this->_context.current_position == this->_context._target->current_position) {
         this->_context._target->jump_to_random_position();
-        // TODO: change to attack state.
-        // this->_context.set_state(new BuneyAttackState(this->_context));
+        this->_context.set_state(new BuneyAttackState(this->_context));
     }
 }
