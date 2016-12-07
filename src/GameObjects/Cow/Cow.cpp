@@ -5,13 +5,14 @@
 #include <SDL2/SDL_system.h>
 #include <iostream>
 #include "Cow.hpp"
-#include "../Pathfinding/Pathfinding.hpp"
+#include "../../Pathfinding/Pathfinding.hpp"
+#include "CowStates/CowSleepState.hpp"
 
-Cow::Cow(Graph& _graph, Movable* target)
+Cow::Cow(SummonersRift& _graph, Movable* target)
 : Movable(_graph, nullptr)
-, _last_move_timestamp_ms(mApplication->GetTimeSinceStartedMS())
 , _target(target)
 {
+    this->_current_state = new CowWanderState(*this);
     this->jump_to_random_position();
 
     this->SetTexture(mApplication->LoadTexture("lemmling_Cartoon_cow.png"));
@@ -27,24 +28,12 @@ void Cow::Update(float deltaTime)
 {
     Movable::Update(deltaTime);
 
-    uint32_t current_time = this->mApplication->GetTimeSinceStartedMS();
-    if (current_time > this->_last_move_timestamp_ms + this->_move_delay_ms) {
-        this->_move_to_next_vertex();
-        this->_last_move_timestamp_ms = current_time;
-    }
-
-    if (this->_path.empty()) {
-        this->_recalculate_path();
-    }
-
-    if (this->current_position == this->_target->current_position) {
-        this->_target->jump_to_random_position();
-    }
+    this->_current_state->update(deltaTime);
 }
 
 void Cow::_recalculate_path()
 {
-    vector<Vertex*> calculated_path = Pathfinding::astar(this->_parent_field, this->current_position, this->_target->current_position);
+    vector<Vertex*> calculated_path = Pathfinding::astar(this->_parent_field.field, this->current_position, this->_target->current_position);
 
     this->_path = deque<Vertex*>(calculated_path.begin(), calculated_path.end());
 }
@@ -68,4 +57,23 @@ void Cow::Draw()
     for(auto vertex : this->_path){
         this->mApplication->DrawCircle(vertex->coordinates.x, vertex->coordinates.y, 8, true);
     }
+
+    this->mApplication->SetColor({0,0,0,255});
+    this->mApplication->DrawText("Current cow state: " + this->_current_state->name, 700, 200);
+}
+
+void Cow::set_state(CowState* new_state)
+{
+    this->_current_state = new_state;
+}
+
+void Cow::die()
+{
+    Movable::die();
+    this->set_state(new CowWanderState(*this));
+}
+
+void Cow::sleep()
+{
+    this->set_state(new CowSleepState(*this));
 }

@@ -204,7 +204,7 @@ public:
 
 	virtual void SetActive(bool isActive) { mIsActive = isActive;  };
 
-protected:
+public:
 	FWApplication * mApplication;
 	SDL_Texture * mTexture;
 	

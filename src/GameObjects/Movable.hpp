@@ -9,18 +9,22 @@
 #include "../graph/Vertex.hpp"
 #include "../graph/Graph.hpp"
 #include "../IGameObject.h"
+#include "../graph/SummonersRift.hpp"
 
 class Movable : public IGameObject {
 public:
-    Movable(Graph& parent_field, Vertex* start_position);
+    Movable(SummonersRift& parent_field, Vertex* start_position);
 
     void jump_to_random_position();
+    bool is_on_position(Vertex* position);
 
     virtual void Update(float deltaTime) override;
 
+    virtual void die();
+
     Vertex* current_position;
-protected:
-    Graph& _parent_field;
+
+    SummonersRift& _parent_field;
     void _move_to_vertex(Vertex* destination);
 };
 
